@@ -1,0 +1,1 @@
+This folder only allows GET: DELETE /readonly/info.txt answers 405 with "Allow: GET".

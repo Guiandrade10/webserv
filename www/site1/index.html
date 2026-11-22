@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>webserv - demo panel</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header><img src="/img/logo.svg" alt="webserv logo" width="64" height="64"><h1>webserv - demo panel</h1></header>
+  <p id="js-status">JavaScript did not run.</p>
+  <p>One link per item of the evaluation sheet. Open the browser DevTools (Network tab) to see
+     the request and response headers.</p>
+
+  <h2>Static site</h2>
+  <ul>
+    <li><a href="/about.html">About page (HTML + CSS)</a></li>
+    <li><a href="/style.css">/style.css (text/css)</a> · <a href="/app.js">/app.js (text/javascript)</a> · <a href="/img/logo.svg">/img/logo.svg (image/svg+xml)</a></li>
+    <li><a href="/empty.html">/empty.html (0 bytes, used with siege)</a></li>
+  </ul>
+
+  <h2>Errors, listing and redirects</h2>
+  <ul>
+    <li><a href="/this-page-does-not-exist">A wrong URL (custom 404 page)</a></li>
+    <li><a href="/files/">/files/ (autoindex on: directory listing)</a></li>
+    <li><a href="/noindex">/noindex (no index, autoindex off: 404)</a></li>
+    <li><a href="/old-page">/old-page (301 redirect to /about.html)</a></li>
+    <li><a href="/search">/search (302 redirect to duckduckgo.com)</a></li>
+  </ul>
+
+  <h2>Upload, download and DELETE</h2>
+  <ul>
+    <li><a href="/upload.html">upload.html (POST multipart/form-data)</a></li>
+    <li><a href="/uploads/">/uploads/ (the uploaded files: download them back)</a></li>
+    <li><a href="/delete.html">delete.html (DELETE with fetch)</a></li>
+    <li><a href="/readonly/info.txt">/readonly/info.txt (GET only: DELETE here answers 405)</a></li>
+  </ul>
+
+  <h2>CGI (Python)</h2>
+  <ul>
+    <li><a href="/cgi.html">cgi.html (GET and POST forms, every script)</a></li>
+    <li><a href="/cgi-bin/">/cgi-bin/ (runs index.py)</a></li>
+    <li><a href="/cgi-bin/hello.py">hello.py</a> · <a href="/cgi-bin/env.py">env.py (environment)</a> · <a href="/cgi-bin/relative.py">relative.py (working directory)</a></li>
+  </ul>
+
+  <h2>Other ports and virtual hosts</h2>
+  <ul>
+    <li><a href="http://localhost:8081/">http://localhost:8081/ (another site, default error pages)</a></li>
+    <li>Virtual hosts on 8082: <code>curl --resolve alpha.test:8082:127.0.0.1 http://alpha.test:8082/</code>
+        and the same with <code>beta.test</code></li>
+  </ul>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+data.txt read with a relative path: the CGI runs in its own directory.

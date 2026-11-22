@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Delete - site 1</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+  <h1>Delete an uploaded file</h1>
+  <label>File name in /uploads/: <input id="name" type="text" placeholder="photo.png"></label>
+  <button id="delete" type="button">DELETE</button>
+  <p id="result"></p>
+  <p><a href="/uploads/">See the uploaded files (autoindex)</a> · <a href="/upload.html">Upload</a> · <a href="/">Home</a></p>
+  <script>
+    document.getElementById("delete").addEventListener("click", function () {
+      var name = document.getElementById("name").value;
+      var result = document.getElementById("result");
+      fetch("/uploads/" + encodeURIComponent(name), { method: "DELETE" })
+        .then(function (response) {
+          result.textContent = "DELETE /uploads/" + name + " -> " + response.status + " " + response.statusText;
+        })
+        .catch(function (error) { result.textContent = "request failed: " + error; });
+    });
+  </script>
+</body>
+</html>

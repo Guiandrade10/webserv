@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>CGI - site 1</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+  <h1>CGI demo</h1>
+  <p>Every <code>.py</code> file under <code>/cgi-bin/</code> is run by <code>/usr/bin/python3</code>.</p>
+
+  <h2>GET (fields in QUERY_STRING)</h2>
+  <form method="get" action="/cgi-bin/form.py">
+    <input name="name" placeholder="name" value="Ana">
+    <input name="age" placeholder="age" value="20">
+    <button type="submit">GET form.py</button>
+  </form>
+
+  <h2>POST (fields in the body, read from stdin)</h2>
+  <form method="post" action="/cgi-bin/form.py">
+    <input name="name" placeholder="name" value="Bia">
+    <input name="city" placeholder="city" value="Lisboa">
+    <button type="submit">POST form.py</button>
+  </form>
+
+  <h2>Scripts</h2>
+  <ul>
+    <li><a href="/cgi-bin/hello.py">hello.py</a> - smallest CGI (method and time)</li>
+    <li><a href="/cgi-bin/env.py">env.py</a> - every environment variable received</li>
+    <li><a href="/cgi-bin/relative.py">relative.py</a> - opens data.txt with a relative path (chdir)</li>
+    <li><a href="/cgi-bin/status.py">status.py</a> - custom status 201 and header</li>
+    <li><a href="/cgi-bin/redirect.py">redirect.py</a> - Location only: 302</li>
+    <li><a href="/cgi-bin/slow.py">slow.py</a> - answers after 2 s (the server keeps serving others)</li>
+    <li><a href="/cgi-bin/crash.py">crash.py</a> - raises an exception: 502, traceback in the server terminal</li>
+    <li><a href="/cgi-bin/bad_output.py">bad_output.py</a> - no CGI headers: 502</li>
+    <li><a href="/cgi-bin/infinite.py">infinite.py</a> - infinite loop: killed after 10 s, 504</li>
+  </ul>
+  <p><a href="/">Back to the panel</a></p>
+</body>
+</html>

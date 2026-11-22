@@ -1,0 +1,5 @@
+body { font-family: sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; color: #1f2933; background: #f5f7fa; }
+header { display: flex; align-items: center; gap: 1rem; }
+h1 { color: #2563eb; }
+a { color: #1d4ed8; }
+#js-status { font-weight: bold; }
