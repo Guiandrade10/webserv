@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by gude-and, jde-carv.*
+*This project has been created as part of the 42 curriculum by gude-and, jde-carv, jose-vda*
 
 # webserv
 
